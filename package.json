@@ -1,7 +1,7 @@
 {
   "name": "coc-marksman",
   "version": "0.0.1",
-  "description": "Marksman (Markdown LSP server) language server extension for coc.nvim",
+  "description": "Marksman (Markdown LSP server) extension for coc.nvim",
   "author": "yaegassy <yosstools@gmail.com>",
   "license": "MIT",
   "main": "lib/index.js",
