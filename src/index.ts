@@ -159,7 +159,6 @@ async function connectToServer(context: ExtensionContext, status: StatusBarItem)
   // Try to find the server binary and create ServerOptions
   // Return early if no binary can be found
   let serverOptions: ServerOptions;
-  ////let maybeServerOptions: ServerOptions | null = await mkServerOptions(context);
   const maybeServerOptions: ServerOptions | null = await mkServerOptions(context);
   if (maybeServerOptions === null) {
     console.error(`Couldn't find ${serverBinName()} server binary`);
