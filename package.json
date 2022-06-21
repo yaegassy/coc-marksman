@@ -1,0 +1,113 @@
+{
+  "name": "coc-marksman",
+  "version": "0.0.1",
+  "description": "Marksman (Markdown LSP server) language server extension for coc.nvim",
+  "author": "yaegassy <yosstools@gmail.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "keywords": [
+    "coc.nvim",
+    "vim",
+    "neovim",
+    "markdown",
+    "lsp",
+    "note",
+    "notes",
+    "link",
+    "links",
+    "references",
+    "crossreference",
+    "zettelkasten",
+    "roam"
+  ],
+  "engines": {
+    "coc": "^0.0.81"
+  },
+  "scripts": {
+    "lint": "eslint src --ext ts",
+    "clean": "rimraf lib",
+    "watch": "node esbuild.js --watch",
+    "build": "node esbuild.js",
+    "prepare": "node esbuild.js"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 120,
+    "semi": true
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.41",
+    "@types/node-fetch": "^2.5.8",
+    "@types/which": "^2.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
+    "coc.nvim": "^0.0.81",
+    "esbuild": "^0.14.46",
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.7.4"
+  },
+  "activationEvents": [
+    "workspaceContains:.marksman.toml",
+    "onCommand:marksman.restartServer"
+  ],
+  "contributes": {
+    "rootPatterns": [
+      {
+        "filetype": "markdown",
+        "patterns": [
+          ".marksman.toml"
+        ]
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "coc-marksman configuration",
+      "properties": {
+        "marksman.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable coc-marksman extension"
+        },
+        "marksman.customCommand": {
+          "type": "string",
+          "description": "When set use this command to run the language server.\nThe command is split on spaces: first part is the command name, the rest is the arguments.",
+          "scope": "window"
+        },
+        "marksman.customCommandDir": {
+          "type": "string",
+          "markdownDescription": "When set run the `#marksman.customCommand#` from this dir rather than workspace root.",
+          "scope": "window"
+        },
+        "marksman.trace.server": {
+          "type": "string",
+          "enum": [
+            "off",
+            "messages",
+            "verbose"
+          ],
+          "default": "verbose",
+          "description": "Level of verbosity in communicating with the server",
+          "scope": "window"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "marksman.restartServer",
+        "title": "Marksman: Restart Server"
+      },
+      {
+        "command": "marksman.showOutputChannel",
+        "title": "Marksman: Show Output"
+      }
+    ]
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "which": "^2.0.2"
+  }
+}
