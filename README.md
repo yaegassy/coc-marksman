@@ -4,6 +4,8 @@
 
 Integrates [Marksman](https://github.com/artempyanykh/marksman) language server into [coc.nvim](https://github.com/neoclide/coc.nvim) for delightful Markdown note taking experience.
 
+https://user-images.githubusercontent.com/188642/174696988-98d3f458-7f91-4c06-83e2-9c2a6a6ca5ed.mp4
+
 See the [project page](https://github.com/artempyanykh/marksman) for more detailed information.
 
 ## Install
