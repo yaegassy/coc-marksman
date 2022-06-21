@@ -81,6 +81,8 @@ class ExperimentalFeatures implements StaticFeature {
 }
 
 export async function activate(context: ExtensionContext): Promise<void> {
+  if (!workspace.getConfiguration('marksman').get('enable', true)) return;
+
   // Create a status
   statusBarItem = createDefaultStatus();
   statusBarItem.show();
