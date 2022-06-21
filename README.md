@@ -36,6 +36,11 @@ Plug 'yaegassy/coc-marksman', {'do': 'yarn install --frozen-lockfile'}
 - `marksman.restartServer`: Marksman: Restart Server
 - `marksman.showOutputChannel`: Marksman: Show Output
 
+## Thanks
+
+- <https://github.com/artempyanykh/marksman>
+- <https://github.com/artempyanykh/marksman-vscode>
+
 ## License
 
 MIT
