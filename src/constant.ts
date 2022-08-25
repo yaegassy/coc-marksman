@@ -5,6 +5,6 @@
  */
 
 // @ts-ignore
-import { marksmanVersion } from '../package.json';
+import { marksmanBinVersion } from '../package.json';
 
-export const MARKSMAN_BIN_VERSION = marksmanVersion;
+export const MARKSMAN_BIN_VERSION = marksmanBinVersion;
