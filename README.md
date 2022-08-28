@@ -10,6 +10,14 @@ See the [project page](https://github.com/artempyanykh/marksman) for more detail
 
 ## Install
 
+**CocInstall**:
+
+> scoped packages
+
+```vim
+:CocInstall @yaegassy/coc-marksman
+```
+
 **vim-plug**:
 
 ```vim
