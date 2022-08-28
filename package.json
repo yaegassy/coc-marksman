@@ -1,6 +1,6 @@
 {
-  "name": "coc-marksman",
-  "version": "0.0.1",
+  "name": "@yaegassy/coc-marksman",
+  "version": "0.0.5",
   "marksmanBinVersion": "2022-08-27",
   "description": "Marksman (Markdown LSP server) extension for coc.nvim",
   "author": "yaegassy <yosstools@gmail.com>",
@@ -23,6 +23,13 @@
   ],
   "engines": {
     "coc": "^0.0.81"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yaegassy/coc-marksman"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "lint": "eslint src --ext ts",
