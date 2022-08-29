@@ -48,7 +48,7 @@
     "@types/node-fetch": "^2.5.8",
     "@types/which": "^2.0.1",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
-    "@typescript-eslint/parser": "^5.28.0",
+    "@typescript-eslint/parser": "^5.35.1",
     "coc.nvim": "^0.0.81",
     "esbuild": "^0.14.46",
     "eslint": "^8.18.0",
