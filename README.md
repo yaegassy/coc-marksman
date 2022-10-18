@@ -10,29 +10,11 @@ See the [project page](https://github.com/artempyanykh/marksman) for more detail
 
 ## Install
 
-**CocInstall**:
-
-> scoped packages
-
 ```vim
 :CocInstall @yaegassy/coc-marksman
 ```
 
-**vim-plug**:
-
-```vim
-Plug 'yaegassy/coc-marksman', {'do': 'yarn install --frozen-lockfile'}
-```
-
-## Note
-
-1. **Get `marksman` server binary**.
-   The extension will try to automatically download Marksman language server
-   from GH releases. This is the easiest way to get started.
-
-   An alternative is to either download `marksman` binary from the [releases page][mn-releases] or to build `marksman` from source. Put it somewhere in your `PATH` and you should be good to go.
-2. **Add `.marksman.toml` to your workspace root folder**.
-   The extension is automatically activated only when `.marksman.toml` file is present. This is done to avoid running Zeta Note on random Markdown files, but rather only inside your notes folder.
+> scoped packages
 
 ## Configuration options
 
