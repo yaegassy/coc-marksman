@@ -108,49 +108,6 @@ export async function activate(context: ExtensionContext): Promise<void> {
     }
   });
 
-  // **MEMO**
-  // Not implemented because the correct behavior was not known,
-  // It may be a feature under development at this time.
-  // ---
-  //
-  //const showReferencesCmd = commands.registerCommand(`${extId}.showReferences`, async (data: ShowReferencesData) => {
-  //  if (client) {
-  //    await commands.executeCommand(
-  //      'editor.action.showReferences',
-  //      data.uri,
-  //      Position.create(data.position.line, data.position.character),
-  //      data.locations.map((d) => {
-  //        Location.create(
-  //          d.uri,
-  //          Range.create(d.range.start.line, d.range.start.character, d.range.end.line, d.range.end.character)
-  //        );
-  //      })
-  //    );
-  //  }
-  //});
-
-  // **MEMO**
-  // In coc.nvim, this does not have to be implemented.
-  // If you want to open the URL, please do the following
-  //
-  // :call CocActionAsync('openLink')
-  // ---
-  //
-  //const followLinkCmd = commands.registerCommand(`${extId}.followLink`, async (data: FollowLinkData) => {
-  //  if (client) {
-  //    const fromLoc = data.from;
-  //    const toLoc = data.to;
-  //    await commands.executeCommand(
-  //      'editor.action.goToLocations',
-  //      fromLoc.uri,
-  //      fromLoc.range.start,
-  //      [toLoc],
-  //      'goto',
-  //      "Couldn't locate the target of the link"
-  //    );
-  //  }
-  //});
-
   if (client) {
     context.subscriptions.push(client.start());
   }
