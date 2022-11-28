@@ -1,6 +1,6 @@
 {
   "name": "@yaegassy/coc-marksman",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "marksmanBinVersion": "2022-11-25",
   "description": "Marksman (Markdown LSP server) extension for coc.nvim",
   "author": "yaegassy <yosstools@gmail.com>",
