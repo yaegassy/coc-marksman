@@ -28,6 +28,19 @@ See the [project page](https://github.com/artempyanykh/marksman) for more detail
 - `marksman.restartServer`: Marksman: Restart Server
 - `marksman.showOutputChannel`: Marksman: Show Output
 
+## Code Actions
+
+Marksman has a code action to create and update a table of contents of a document. 
+
+- `Create a Table of Contents`
+  - REF: <https://github.com/artempyanykh/marksman#code-actions>
+
+This code action is `source` level. Please key mapping `<Plug>(coc-codeaction-source)` in coc.nvim to call it.
+
+```vim
+nmap <leader>as  <Plug>(coc-codeaction-source)
+```
+
 ## Thanks
 
 - <https://github.com/artempyanykh/marksman>
