@@ -97,7 +97,7 @@
             "messages",
             "verbose"
           ],
-          "default": "verbose",
+          "default": "off",
           "description": "Level of verbosity in communicating with the server",
           "scope": "window"
         }
