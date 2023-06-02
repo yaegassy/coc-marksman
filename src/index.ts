@@ -197,10 +197,10 @@ function releaseBinName(): string {
     } else if (arch === 'arm64') {
       return 'marksman-linux-arm64';
     } else {
-      throw new Error(`Unsupported platform: ${platform}`);
+      throw new Error(`Unsupported ${arch} ${platform}`);
     }
   } else {
-    throw new Error(`Unsupported platform: ${platform}`);
+    throw new Error(`Unsupported ${arch} ${platform}`);
   }
 }
 
