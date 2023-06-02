@@ -185,13 +185,20 @@ function serverBinName(): string {
 
 function releaseBinName(): string {
   const platform = os.platform();
+  const arch = os.arch();
 
   if (platform === 'win32') {
     return 'marksman-windows.exe';
   } else if (platform === 'darwin') {
     return 'marksman-macos';
   } else if (platform === 'linux') {
-    return 'marksman-linux';
+    if (arch === 'x64') {
+      return 'marksman-linux-x64';
+    } else if (arch === 'arm64') {
+      return 'marksman-linux-arm64';
+    } else {
+      throw new Error(`Unsupported platform: ${platform}`);
+    }
   } else {
     throw new Error(`Unsupported platform: ${platform}`);
   }
