@@ -188,7 +188,7 @@ function releaseBinName(): string {
   const arch = os.arch();
 
   if (platform === 'win32') {
-    return 'marksman-windows.exe';
+    return 'marksman.exe';
   } else if (platform === 'darwin') {
     return 'marksman-macos';
   } else if (platform === 'linux') {
