@@ -109,7 +109,7 @@ export async function activate(context: ExtensionContext): Promise<void> {
     }
   });
 
-  const findReferencesCmd = commands.registerCommand(`${extId}.findReferences`, findReferencesCmdImpl);
+  const findReferencesCmd = commands.registerCommand(`${extId}.findReferences`, findReferencesCmdImpl, null, true);
 
   if (client) {
     context.subscriptions.push(client.start());
