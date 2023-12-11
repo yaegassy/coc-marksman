@@ -1,5 +1,4 @@
 import {
-  commands,
   DocumentSelector,
   ExecutableOptions,
   ExtensionContext,
@@ -12,6 +11,8 @@ import {
   State,
   StaticFeature,
   StatusBarItem,
+  Uri,
+  commands,
   window,
   workspace,
 } from 'coc.nvim';
@@ -48,20 +49,20 @@ const releaseBaseUrl = 'https://github.com/artempyanykh/marksman/releases/downlo
 const statusNotificationType = new NotificationType<StatusParams>('marksman/status');
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-type ShowReferencesData = {
+type FindReferencesData = {
   uri: string;
   position: Position;
   locations: Location[];
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-type FollowLinkData = {
-  from: Location;
-  to: Location;
-};
+//type FollowLinkData = {
+//  from: Location;
+//  to: Location;
+//};
 
 type ExperimentalCapabilities = {
-  codeLensShowReferences?: boolean;
+  codeLensFindReferences?: boolean;
   followLinks?: boolean;
   statusNotification?: boolean;
 };
@@ -69,7 +70,7 @@ type ExperimentalCapabilities = {
 class ExperimentalFeatures implements StaticFeature {
   fillClientCapabilities(capabilities: any): void {
     const experimental: ExperimentalCapabilities = capabilities.experimental ?? {};
-    experimental.codeLensShowReferences = true;
+    experimental.codeLensFindReferences = true;
     experimental.followLinks = true;
     experimental.statusNotification = true;
 
@@ -108,10 +109,19 @@ export async function activate(context: ExtensionContext): Promise<void> {
     }
   });
 
+  const findReferencesCmd = commands.registerCommand(`${extId}.findReferences`, findReferencesCmdImpl, null, true);
+
   if (client) {
     context.subscriptions.push(client.start());
   }
-  context.subscriptions.push(restartServerCmd, showOutputCmd);
+
+  context.subscriptions.push(restartServerCmd, showOutputCmd, findReferencesCmd);
+}
+
+async function findReferencesCmdImpl(data: FindReferencesData) {
+  if (client) {
+    await commands.executeCommand('editor.action.showReferences', Uri.parse(data.uri), data.position, data.locations);
+  }
 }
 
 async function connectToServer(context: ExtensionContext, status: StatusBarItem): Promise<LanguageClient | null> {
