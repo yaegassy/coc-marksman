@@ -187,20 +187,16 @@ function releaseBinName(): string {
   const platform = os.platform();
   const arch = os.arch();
 
-  if (platform === 'win32') {
+  if (platform === 'win32' && arch === 'x64') {
     return 'marksman.exe';
   } else if (platform === 'darwin') {
     return 'marksman-macos';
-  } else if (platform === 'linux') {
-    if (arch === 'x64') {
-      return 'marksman-linux-x64';
-    } else if (arch === 'arm64') {
-      return 'marksman-linux-arm64';
-    } else {
-      throw new Error(`Unsupported ${arch} ${platform}`);
-    }
+  } else if (platform === 'linux' && arch === 'x64') {
+    return 'marksman-linux-x64';
+  } else if (platform === 'linux' && arch === 'arm64') {
+    return 'marksman-linux-arm64';
   } else {
-    throw new Error(`Unsupported ${arch} ${platform}`);
+    throw new Error(`Unsupported platform: ${platform}`);
   }
 }
 
