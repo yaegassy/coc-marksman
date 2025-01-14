@@ -33,7 +33,7 @@ See the [project page](https://github.com/artempyanykh/marksman) for more detail
 Marksman has a code action to create and update a table of contents of a document. 
 
 - `Create a Table of Contents`
-  - REF: <https://github.com/artempyanykh/marksman#code-actions>
+  - REF: <https://github.com/artempyanykh/marksman/blob/main/docs/features.md#code-actions>
 
 This code action is `source` level. Please key mapping `<Plug>(coc-codeaction-source)` in coc.nvim to call it.
 
